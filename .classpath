@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Mersha/Desktop/Programación/JAVALURA/Alura_Hotel_v2/JARS/Added JAR/c3p0-0.9.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mersha/Desktop/Programación/JAVALURA/Alura_Hotel_v2/JARS/Added JAR/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mersha/Desktop/Programación/JAVALURA/Alura_Hotel_v2/JARS/Added JAR/mchange-commons-java-0.2.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Mersha/Desktop/Programación/JAVALURA/Alura_Hotel_v2/JARS/Added JAR/mysql-connector-j-8.0.31.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
