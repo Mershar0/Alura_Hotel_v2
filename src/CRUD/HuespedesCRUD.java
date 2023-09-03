@@ -120,5 +120,11 @@ public class HuespedesCRUD {
 			}
 		}
 	}
+
+	public void Actualizar(String nombre, String apellido, Date fechaNacimiento, String nacionalidad, String telefono,
+			Integer id_reserva) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

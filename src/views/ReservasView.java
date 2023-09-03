@@ -363,9 +363,14 @@ public class ReservasView extends JFrame {
 				 inicio.add(Calendar.DATE, 1);
 			 }
 			 valor = dias * noche;
-			 txtValor.setText(valor);
+			 txtValor.setText("S/"+valor);
 		 }
 	 }
+	 
+	 public void limpiarValor() {
+		 txtValor.setText("");
+	 }
+	 
 	 
 	 
 	 
