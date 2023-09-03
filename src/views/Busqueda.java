@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 import controladores.ReservaControlador;
 import controladores.huespedesControlador;
@@ -102,7 +103,7 @@ public class Busqueda extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("SISTEMA DE BÚSQUEDA");
 		lblNewLabel_4.setForeground(new Color(12, 138, 199));
-		lblNewLabel_4.setFont(new Font("Roboto Black", Font.BOLD, 24));
+		lblNewLabel_4.setFont(new Font("Roboto Black", Font.BOLD, 22));
 		lblNewLabel_4.setBounds(331, 62, 280, 42);
 		contentPane.add(lblNewLabel_4);
 		
@@ -113,34 +114,59 @@ public class Busqueda extends JFrame {
 		contentPane.add(panel);
 
 		
-		
+		//Reserva - M
 		
 		tbReservas = new JTable();
 		tbReservas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tbReservas.setFont(new Font("Roboto", Font.PLAIN, 16));
 		panel.addTab("Reservas", new ImageIcon(Busqueda.class.getResource("/imagenes/reservado.png")), tbReservas, null);
+		
+		// JScrollPane para tbReservas - M
+		JScrollPane scrollPaneReservas = new JScrollPane(tbReservas);
+		scrollPaneReservas.setBounds(0, 0, 861, 280); // Ajusta las coordenadas y dimensiones según tu diseño
+		panel.addTab("Reservas", new ImageIcon(Busqueda.class.getResource("/imagenes/reservado.png")), scrollPaneReservas, null);
+
+		// Configura el encabezado de la tabla para que se muestre - M
+		JTableHeader headerReservas = tbReservas.getTableHeader();
+		scrollPaneReservas.setColumnHeaderView(headerReservas);
+		headerReservas.setFont(new Font("Roboto", Font.PLAIN, 15));
+		
 		modelo = (DefaultTableModel) tbReservas.getModel();
-		modelo.addColumn("Numero de Reserva");
+		modelo.addColumn("Número de Reserva");
 		modelo.addColumn("Fecha Check In");
 		modelo.addColumn("Fecha Check Out");
 		modelo.addColumn("Valor");
 		modelo.addColumn("Forma de Pago");
+		
+		
 		tbReservas.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		mostrarTablaReservas();
 		
+		//Huesped - M
 		
 		tbHuespedes = new JTable();
 		tbHuespedes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tbHuespedes.setFont(new Font("Roboto", Font.PLAIN, 16));
 		panel.addTab("Huéspedes", new ImageIcon(Busqueda.class.getResource("/imagenes/pessoas.png")), tbHuespedes, null);
+		
+		//JScrollPane para tbHuespedes
+		JScrollPane scrollPaneHuespedes = new JScrollPane(tbHuespedes);
+		scrollPaneHuespedes.setBounds(0, 0, 861, 280); // Ajusta las coordenadas y dimensiones según tu diseño
+		panel.addTab("Huéspedes", new ImageIcon(Busqueda.class.getResource("/imagenes/pessoas.png")), scrollPaneHuespedes, null);
+
+		// Configura el encabezado de la tabla para que se muestre
+		JTableHeader headerHuespedes = tbHuespedes.getTableHeader();
+		scrollPaneHuespedes.setColumnHeaderView(headerHuespedes);
+		headerHuespedes.setFont(new Font("Roboto", Font.PLAIN, 15));
+		
 		modeloH = (DefaultTableModel) tbHuespedes.getModel();
-		modeloH.addColumn("Numero de Huesped");
+		modeloH.addColumn("Núm. Huésped");
 		modeloH.addColumn("Nombre");
 		modeloH.addColumn("Apellido");
-		modeloH.addColumn("Fecha de Nacimiento");
+		modeloH.addColumn("F. Nacimiento");
 		modeloH.addColumn("Nacionalidad");
-		modeloH.addColumn("Telefono");
-		modeloH.addColumn("Numero de Reserva");
+		modeloH.addColumn("Teléfono");
+		modeloH.addColumn("Núm. Reserva");
 		mostrarTablaHuespedes();
 		
 		JLabel lblNewLabel_2 = new JLabel("");
@@ -278,7 +304,7 @@ public class Busqueda extends JFrame {
 				}
 				else if (filaHuespedes >=0){
 					actualizarHuespedes();
-					System.out.println("eres imbecil");
+					System.out.println("Error");
 					eliminarTabla();
 					mostrarTablaHuespedes();
 					mostrarTablaReservas();
@@ -337,7 +363,7 @@ public class Busqueda extends JFrame {
 						mostrarTablaReservas();
 					}
 				}else {
-					JOptionPane.showMessageDialog(null, "hubo un error, busca bien :v");
+					JOptionPane.showMessageDialog(null, "Error generado");
 				}
 			}
 		});
@@ -467,7 +493,7 @@ public class Busqueda extends JFrame {
 	    		this.reservasControl.actualizar(fechaE, fechaS, valor, formaPago, id);
 	    		JOptionPane.showMessageDialog(this, String.format("Registro Modificado con exito"));
 	    		
-	    	}, ()-> JOptionPane.showMessageDialog(this, "Porfavor, no seas animal xD"));
+	    	}, ()-> JOptionPane.showMessageDialog(this, "Error en la operación"));
 	    }
 	    
 	    private void actualizarHuespedes() {
@@ -484,7 +510,7 @@ public class Busqueda extends JFrame {
 	    		this.huespedesControl.actualizar(nombre, apellido, fechaNacimiento, nacionalidad, telefono,id_reserva);
 	    		JOptionPane.showMessageDialog(this, String.format("Registro Modificado con exito"));
 	    		
-	    	}, ()-> JOptionPane.showMessageDialog(this, "Porfavor, no seas animal xD"));
+	    	}, ()-> JOptionPane.showMessageDialog(this, "Error en la operación"));
 	    
 	    }
 	     

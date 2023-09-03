@@ -245,13 +245,7 @@ public class Login extends JFrame {
 	}
 	
 	private void Login() {
-		//Constructor del Login - M
-	/*	String Usuario = "admin";
-		String Contraseña = "admin";
-		
-			String contrase = new String (txtContraseña.getPassword());
-			*/
-		
+	
 
 	} 
 	 private void headerMousePressed(java.awt.event.MouseEvent evt) {
