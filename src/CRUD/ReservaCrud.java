@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.reserva;
+import modelo.Reservas;
 
 public class ReservaCrud {
 	private Connection conexion;
@@ -18,7 +18,7 @@ public class ReservaCrud {
 	this.conexion= conexion;
 	}
 	
-	public void guardar (reserva res) {
+	public void guardar (Reservas res) {
 		String sql = "INSERT INTO reservas (fecha_entrada,fecha_salida,valor,forma_de_pago)"
 				+ "VALUES(?,?,?,?)";
 		try (PreparedStatement pstm = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -43,8 +43,8 @@ public class ReservaCrud {
 	
 	
 	
-	public List<reserva> buscar(){
-		List<reserva> reservas = new ArrayList<reserva>();
+	public List<Reservas> buscar(){
+		List<Reservas> reservas = new ArrayList<Reservas>();
 		try {
 			String sql = "SELECT id, fecha_entrada, fecha_salida, valor,forma_de_pago FROM reservas";
 			
@@ -59,8 +59,8 @@ public class ReservaCrud {
 		}
 	}
 	
-	public List<reserva> buscarId(String id){
-		List<reserva> reservas = new ArrayList<reserva>();
+	public List<Reservas> buscarId(String id){
+		List<Reservas> reservas = new ArrayList<Reservas>();
 		try {
 			String sql = "SELECT id, fecha_entrada, fecha_salida, valor,forma_de_pago FROM reservas WHERE  id= ?";
 			
@@ -101,10 +101,10 @@ public class ReservaCrud {
 	}
 	
 	
-	private void transFormarResultSetEnReserva(List<reserva> reservas, PreparedStatement pstm) throws SQLException{
+	private void transFormarResultSetEnReserva(List<Reservas> reservas, PreparedStatement pstm) throws SQLException{
 		try(ResultSet rst = pstm.getResultSet()){
 			while(rst.next()) {
-				reserva producto = new reserva(rst.getInt(1),rst.getDate(2),rst.getDate(3),rst.getString(4), rst.getString(5));
+				Reservas producto = new Reservas(rst.getInt(1),rst.getDate(2),rst.getDate(3),rst.getString(4), rst.getString(5));
 				reservas.add(producto);
 			}
 		}

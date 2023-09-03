@@ -6,7 +6,7 @@ import java.util.List;
 
 import CRUD.ReservaCrud;
 import factory.conexionBase;
-import modelo.reserva;
+import modelo.Reservas;
 
 public class ReservaControlador {
 	private ReservaCrud reservas;
@@ -16,14 +16,14 @@ public class ReservaControlador {
 		this.reservas = new ReservaCrud(con);	
 	}
 	
-	public void guardar (reserva res) {
+	public void guardar (Reservas res) {
 		this.reservas.guardar(res);
 	}
 	
-	public List<reserva> buscar(){
+	public List<Reservas> buscar(){
 		return this.reservas.buscar();
 	}
-	public List<reserva> buscarId(String id){
+	public List<Reservas> buscarId(String id){
 		return this.reservas.buscarId(id);
 	}
 		

@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controladores.ReservaControlador;
 import controladores.huespedesControlador;
-import modelo.reserva;
+import modelo.Reservas;
 import modelo.Huespedes;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -371,10 +371,10 @@ public class Busqueda extends JFrame {
 	    }
 	    
 	    
-	    private List<reserva> BuscarReservas(){
+	    private List<Reservas> BuscarReservas(){
 			return this.reservasControl.buscar();
 		}
-	    private List<reserva> BuscarReservasId(){
+	    private List<Reservas> BuscarReservasId(){
 			return this.reservasControl.buscarId(txtBuscar.getText());
 		}
 	    
@@ -396,9 +396,9 @@ public class Busqueda extends JFrame {
 	    
 	    //fun
 	    private void mostrarTablaReservas() {
-	    	List<reserva> reserva = BuscarReservas();
+	    	List<Reservas> reserva = BuscarReservas();
 	    	try {
-				for (reserva res : reserva) {
+				for (Reservas res : reserva) {
 					modelo.addRow(new Object[] {
 							res.getId(),res.getFechaE(),res.getFechaS(),res.getValor(),res.getFormaPago()
 					});
@@ -409,9 +409,9 @@ public class Busqueda extends JFrame {
 	    }
 	    
 	    private void mostrarTablaReservasId() {
-	    	List<reserva> reserva = BuscarReservasId();
+	    	List<Reservas> reserva = BuscarReservasId();
 	    	try {
-				for (reserva res : reserva) {
+				for (Reservas res : reserva) {
 					modelo.addRow(new Object[] {
 							res.getId(),res.getFechaE(),res.getFechaS(),res.getValor(),res.getFormaPago()
 					});

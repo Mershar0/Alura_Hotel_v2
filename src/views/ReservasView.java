@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 
 import controladores.ReservaControlador;
-import modelo.reserva;
+import modelo.Reservas;
 
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -133,13 +133,13 @@ public class ReservasView extends JFrame {
 		JLabel lblCheckIn = new JLabel("FECHA DE CHECK IN");
 		lblCheckIn.setForeground(SystemColor.textInactiveText);
 		lblCheckIn.setBounds(68, 136, 169, 14);
-		lblCheckIn.setFont(new Font("Roboto Black", Font.PLAIN, 18));
+		lblCheckIn.setFont(new Font("Roboto Black", Font.PLAIN, 17));
 		panel.add(lblCheckIn);
 		
 		JLabel lblCheckOut = new JLabel("FECHA DE CHECK OUT");
 		lblCheckOut.setForeground(SystemColor.textInactiveText);
 		lblCheckOut.setBounds(68, 221, 187, 14);
-		lblCheckOut.setFont(new Font("Roboto Black", Font.PLAIN, 18));
+		lblCheckOut.setFont(new Font("Roboto Black", Font.PLAIN, 17));
 		panel.add(lblCheckOut);
 		
 		txtFechaS = new JDateChooser();
@@ -163,7 +163,7 @@ public class ReservasView extends JFrame {
 		JLabel lblValor = new JLabel("VALOR DE LA RESERVA");
 		lblValor.setForeground(SystemColor.textInactiveText);
 		lblValor.setBounds(72, 303, 196, 14);
-		lblValor.setFont(new Font("Roboto Black", Font.PLAIN, 18));
+		lblValor.setFont(new Font("Roboto Black", Font.PLAIN, 17));
 		panel.add(lblValor);
 		
 		txtValor = new JTextField();
@@ -193,13 +193,13 @@ public class ReservasView extends JFrame {
 		JLabel lblFormaPago = new JLabel("FORMA DE PAGO");
 		lblFormaPago.setForeground(SystemColor.textInactiveText);
 		lblFormaPago.setBounds(68, 382, 187, 24);
-		lblFormaPago.setFont(new Font("Roboto Black", Font.PLAIN, 18));
+		lblFormaPago.setFont(new Font("Roboto Black", Font.PLAIN, 17));
 		panel.add(lblFormaPago);
 		
 		JLabel lblTitulo = new JLabel("SISTEMA DE RESERVAS");
 		lblTitulo.setBounds(109, 60, 219, 42);
 		lblTitulo.setForeground(new Color(12, 138, 199));
-		lblTitulo.setFont(new Font("Roboto", Font.BOLD, 20));
+		lblTitulo.setFont(new Font("Roboto", Font.BOLD, 19));
 		panel.add(lblTitulo);
 		
 		JPanel panel_1 = new JPanel();
@@ -336,7 +336,7 @@ public class ReservasView extends JFrame {
 		 try {
 			 String fechaE = ((JTextField)txtFechaE.getDateEditor().getUiComponent()).getText();
 			 String fechaS = ((JTextField)txtFechaS.getDateEditor().getUiComponent()).getText();
-			 reserva res = new reserva(java.sql.Date.valueOf(fechaE), java.sql.Date.valueOf(fechaS), txtValor.getText(), txtFormaPago.getSelectedItem().toString());
+			 Reservas res = new Reservas(java.sql.Date.valueOf(fechaE), java.sql.Date.valueOf(fechaS), txtValor.getText(), txtFormaPago.getSelectedItem().toString());
 			 reservasCon.guardar(res);
 			 
 			 RegistroHuesped registro = new RegistroHuesped(res.getId());
@@ -363,7 +363,7 @@ public class ReservasView extends JFrame {
 				 inicio.add(Calendar.DATE, 1);
 			 }
 			 valor = dias * noche;
-			 txtValor.setText("S/"+valor);
+			 txtValor.setText(""+valor);
 		 }
 	 }
 	 

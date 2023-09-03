@@ -2,7 +2,7 @@ package modelo;
 
 import java.sql.Date;
 
-public class reserva {
+public class Reservas {
 private Integer id;
 private Date fechaE;
 private Date fechaS;
@@ -10,7 +10,7 @@ private String valor;
 private String formaPago;
 
 
-public reserva(Date fechaE, Date fechaS, String valor, String formaPago) {
+public Reservas(Date fechaE, Date fechaS, String valor, String formaPago) {
 	super();
 	this.fechaE = fechaE;
 	this.fechaS = fechaS;
@@ -19,7 +19,7 @@ public reserva(Date fechaE, Date fechaS, String valor, String formaPago) {
 }
 
 
-public reserva(Integer id,Date fechaE, Date fechaS, String valor, String formaPago) {
+public Reservas(Integer id,Date fechaE, Date fechaS, String valor, String formaPago) {
 	super();
 	this.id = id;
 	this.fechaE = fechaE;

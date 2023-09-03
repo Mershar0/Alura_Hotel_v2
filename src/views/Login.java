@@ -23,7 +23,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.usuario;
+import modelo.Usuarios;
 
 public class Login extends JFrame {
 
@@ -245,6 +245,12 @@ public class Login extends JFrame {
 	}
 	
 	private void Login() {
+		//Constructor del Login - M
+	/*	String Usuario = "admin";
+		String Contraseña = "admin";
+		
+			String contrase = new String (txtContraseña.getPassword());
+			*/
 		
 
 	} 

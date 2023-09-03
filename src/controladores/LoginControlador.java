@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import modelo.usuario;
+import modelo.Usuarios;
 import views.Login;
 import views.MenuUsuario;
 
@@ -22,7 +22,7 @@ public class LoginControlador implements ActionListener {
 		String contrasenia = vista.getContrasenia();
 		
 
-        if(usuario.validarUsuario(nombre, contrasenia)){
+        if(Usuarios.validarUsuario(nombre, contrasenia)){
             MenuUsuario menu = new MenuUsuario();
             menu.setVisible(true);
             vista.dispose();	 

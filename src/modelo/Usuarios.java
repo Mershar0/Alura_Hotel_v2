@@ -7,11 +7,11 @@ import java.sql.SQLException;
 
 import factory.conexionBase;
 
-public class usuario {
+public class Usuarios {
 	private String nombre;
 	private String contrasenia;
 	
-	public usuario(String nombre, String contrasenia) {
+	public Usuarios(String nombre, String contrasenia) {
 		this.nombre = nombre;
 		this.contrasenia = contrasenia;
 	}
