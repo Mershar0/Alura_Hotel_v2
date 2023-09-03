@@ -34,4 +34,6 @@ public class ReservaControlador {
 	public void Eliminar(Integer id) {
 		this.reservas.Eliminar(id);
 	}
+
+	
 }

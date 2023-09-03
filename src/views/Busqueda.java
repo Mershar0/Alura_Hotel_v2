@@ -404,7 +404,6 @@ public class Busqueda extends JFrame {
 			return this.reservasControl.buscarId(txtBuscar.getText());
 		}
 	    
-	    
 	    private List<Huespedes> BuscarHuespedes(){
 			return this.huespedesControl.buscarHuespedes();
 		}

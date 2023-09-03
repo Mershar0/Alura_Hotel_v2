@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -189,20 +190,23 @@ public class MenuUsuario extends JFrame {
 	    contentPane.add(panelFecha);
 	    panelFecha.setLayout(null);
 	    
-	    JLabel lblNewLabel_1 = new JLabel("Sistema de reservas Hotel Alura");
+	    JLabel lblNewLabel_1 = new JLabel("Sistema de reservas: Hotel Alura");
 	    lblNewLabel_1.setBounds(180, 11, 356, 42);
 	    panelFecha.add(lblNewLabel_1);
 	    lblNewLabel_1.setForeground(Color.WHITE);
 	    lblNewLabel_1.setFont(new Font("Roboto", Font.PLAIN, 24));
 	    
 	    JLabel labelFecha = new JLabel("New label");
-	    labelFecha.setBounds(35, 64, 294, 36);
+	    labelFecha.setBounds(220, 64, 294, 36);
 	    panelFecha.add(labelFecha);
 	    labelFecha.setForeground(Color.WHITE);
-	    labelFecha.setFont(new Font("Roboto", Font.PLAIN, 33));
+	    labelFecha.setFont(new Font("Roboto", Font.PLAIN, 30));
 	    Date fechaActual = new Date(); //fecha y hora actual
 	    String fecha = new SimpleDateFormat("dd/MM/yyyy").format(fechaActual); //formatear la fecha en una cadena
 	    labelFecha.setText("Hoy es " + fecha); //setear la representacion en cadena de la fecha
+	    // Centrar el texto en el JLabel - M
+	    
+	    
 	    
 	    JLabel lblNewLabel = new JLabel("Bienvenido");
 	    lblNewLabel.setFont(new Font("Roboto", Font.BOLD, 24));
